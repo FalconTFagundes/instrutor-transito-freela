@@ -1,34 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Instrutor de Trânsito Luis em Governador Valadares-MG. Aulas personalizadas para iniciantes. CNH Categoria B com segurança e qualidade.">
-    <meta name="keywords" content="Instrutor Trânsito Luis, Governador Valadares, CNH Iniciantes, Aulas Direção GV, Instrutor Particular">
+    <meta name="description"
+        content="Instrutor de Trânsito Luis em Governador Valadares-MG. Aulas personalizadas para habilitação e direção segura.">
+    <meta name="keywords"
+        content="Instrutor Trânsito Luis, Governador Valadares, Aulas Direção GV, Instrutor Particular, CNH">
     <meta name="author" content="Luis Instrutor de Trânsito">
-    
-    <title>Instrutor Luis - Aulas de Direção Premium em Governador Valadares</title>
-    
+
+    <title>Instrutor Luis - Aulas de Direção em Governador Valadares</title>
+
     <!-- Google Fonts - Inter + Orbitron -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@700;900&display=swap"
+        rel="stylesheet">
+
     <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
+
     <!-- SweetAlert2 CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.4/dist/sweetalert2.min.css">
-    
+
     <!-- AOS Animation CDN -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        /* Fix para WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000 !important;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128c7e;
+            transform: scale(1.05);
+        }
+
+        .whatsapp-label {
+            position: absolute;
+            top: -45px;
+            right: -10px;
+            background: #25d366;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-float:hover .whatsapp-label {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(-5px);
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 26px;
+            }
+
+            .whatsapp-label {
+                display: none;
+            }
+        }
+
+        /* YouTube Button */
+        .youtube-btn {
+            background: linear-gradient(45deg, #FF0000, #CC0000);
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3);
+        }
+
+        .youtube-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- Header Glass -->
@@ -40,7 +133,8 @@
                     LUIS
                     <small class="d-block">Governador Valadares</small>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: var(--accent-cyan);">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    style="border-color: var(--accent-cyan);">
                     <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
@@ -56,6 +150,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#contato">Contato</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://youtube.com/@LuisInstrutorGV" target="_blank"
+                                rel="noopener">
+                                <i class="fab fa-youtube"></i> YouTube
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -75,22 +175,31 @@
                         APRENDA A <span class="typed-text"></span><span class="typing-cursor"></span>
                     </h1>
                     <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                        Instrutor autônomo em Governador Valadares. Aulas personalizadas para iniciantes com foco em segurança e confiança.
+                        Instrutor autônomo em Governador Valadares. Aulas práticas personalizadas para habilitação
+                        com foco total em segurança e confiança no trânsito.
                     </p>
-                    <button class="btn btn-neon" id="ctaBtn" data-aos="fade-up" data-aos-delay="400">
-                        <i class="fab fa-whatsapp me-2"></i>Agende Agora
-                    </button>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <a href="https://wa.me/557791453822?text=Olá%20Luis!%20Gostaria%20de%20saber%20mais%20sobre%20as%20aulas."
+                            class="btn btn-neon btn-lg me-3">
+                            <i class="fab fa-whatsapp me-2"></i>Fale pelo WhatsApp
+                        </a>
+                        <a href="https://youtube.com/@LuisInstrutorGV" class="youtube-btn" target="_blank"
+                            rel="noopener">
+                            <i class="fab fa-youtube"></i> Dicas no YouTube
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Mim -->
+    <!-- Sobre -->
     <section id="sobre">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title" data-aos="fade-up">Sobre Mim</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Conheça sua jornada ao volante</p>
+                <h2 class="section-title" data-aos="fade-up">Sobre o Instrutor Luis</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Experiência completa para sua
+                    formação como motorista</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -100,17 +209,18 @@
                                 <div class="profile-image mx-auto"></div>
                             </div>
                             <div class="col-md-8">
-                                <h3 class="text-white mb-4" style="font-size: 2rem;">Luis - Instrutor Profissional</h3>
+                                <h3 class="text-white mb-4" style="font-size: 2rem;">Luis Instrutor</h3>
                                 <p class="lead mb-3" style="color: var(--accent-cyan);">
-                                    Transformando iniciantes em motoristas confiantes desde 2024
+                                    Formação completa para motoristas
                                 </p>
                                 <p class="mb-3">
-                                    Sou Luis, instrutor recém-formado e apaixonado por segurança no trânsito em Governador Valadares. 
-                                    Meu objetivo é proporcionar uma experiência de aprendizado tranquila, segura e personalizada.
+                                    Instrutor especializado em Governador Valadares, oferecendo aulas práticas
+                                    personalizadas para todos os níveis de habilitação. Atendimento individualizado
+                                    com foco na construção de habilidades seguras e confiantes.
                                 </p>
                                 <p class="mb-0">
-                                    Com metodologia moderna e foco total no aluno, trabalho para que você desenvolva não apenas 
-                                    habilidades técnicas, mas também confiança e consciência no trânsito.
+                                    Metodologia prática e adaptada às necessidades do aluno, com ênfase em direção
+                                    defensiva e domínio completo das rotinas de trânsito local.
                                 </p>
                             </div>
                         </div>
@@ -124,19 +234,23 @@
     <section id="servicos">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title" data-aos="fade-up">Serviços Premium</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Aulas personalizadas para sua conquista</p>
+                <h2 class="section-title" data-aos="fade-up">Serviços Disponíveis</h2>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Aulas preparadas para sua aprovação
+                    com segurança</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
                     <div class="service-card text-center h-100">
                         <div class="service-icon">
-                            <i class="fas fa-id-card"></i>
+                            <i class="fas fa-car"></i>
                         </div>
-                        <h5>CNH Categoria B</h5>
+                        <h5>Habilitação Automóvel</h5>
                         <p class="text-muted mb-3">Aulas práticas completas para primeira habilitação</p>
-                        <div class="price">
-                            R$ 50<span style="font-size: 1rem; color: var(--text-muted);">/hora</span>
+                        <div class="mt-3">
+                            <a href="https://wa.me/557791453822?text=Olá%20Luis!%20Quero%20saber%20sobre%20aulas%20para%20habilitação%20automóvel."
+                                class="btn btn-sm btn-neon">
+                                Saiba mais
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -145,10 +259,13 @@
                         <div class="service-icon">
                             <i class="fas fa-road"></i>
                         </div>
-                        <h5>Prática Real</h5>
-                        <p class="text-muted mb-3">Experiência real no trânsito de Governador Valadares</p>
-                        <div>
-                            <span class="badge" style="background: var(--accent-cyan); color: var(--bg-primary); padding: 0.5rem 1rem; font-size: 1rem;">INCLUSO</span>
+                        <h5>Prática no Trânsito Real</h5>
+                        <p class="text-muted mb-3">Treinamento completo nas ruas de Governador Valadares</p>
+                        <div class="mt-3">
+                            <a href="https://wa.me/557791453822?text=Olá%20Luis!%20Quero%20saber%20sobre%20prática%20no%20trânsito%20real."
+                                class="btn btn-sm btn-neon">
+                                Saiba mais
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -157,10 +274,13 @@
                         <div class="service-icon">
                             <i class="fas fa-clipboard-check"></i>
                         </div>
-                        <h5>Simulações</h5>
-                        <p class="text-muted mb-3">Prepare-se para o exame prático com confiança</p>
-                        <div>
-                            <span class="badge" style="background: var(--accent-cyan); color: var(--bg-primary); padding: 0.5rem 1rem; font-size: 1rem;">INCLUSO</span>
+                        <h5>Simulações de Exame</h5>
+                        <p class="text-muted mb-3">Preparação direcionada para a prova prática</p>
+                        <div class="mt-3">
+                            <a href="https://wa.me/557791453822?text=Olá%20Luis!%20Quero%20informações%20sobre%20simulações%20de%20exame."
+                                class="btn btn-sm btn-neon">
+                                Saiba mais
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -170,9 +290,12 @@
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h5>Direção Defensiva</h5>
-                        <p class="text-muted mb-3">Aprenda a dirigir com segurança e consciência</p>
-                        <div>
-                            <span class="badge" style="background: var(--accent-cyan); color: var(--bg-primary); padding: 0.5rem 1rem; font-size: 1rem;">INCLUSO</span>
+                        <p class="text-muted mb-3">Técnicas avançadas de segurança no trânsito</p>
+                        <div class="mt-3">
+                            <a href="https://wa.me/557791453822?text=Olá%20Luis!%20Gostaria%20de%20saber%20sobre%20direção%20defensiva."
+                                class="btn btn-sm btn-neon">
+                                Saiba mais
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -184,7 +307,7 @@
     <section class="py-5" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-title" data-aos="fade-up">Por Que Escolher Luis?</h2>
+                <h2 class="section-title" data-aos="fade-up">Por Que Escolher Luis Instrutor?</h2>
             </div>
             <div class="row g-4 text-center">
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
@@ -192,8 +315,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-user-check"></i>
                         </div>
-                        <h5 class="text-white mb-2">Atendimento 1:1</h5>
-                        <p class="text-muted mb-0">Aulas personalizadas para seu ritmo</p>
+                        <h5 class="text-white mb-2">Aulas Individuais</h5>
+                        <p class="text-muted mb-0">Atendimento exclusivo adaptado ao seu ritmo</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
@@ -202,7 +325,7 @@
                             <i class="fas fa-clock"></i>
                         </div>
                         <h5 class="text-white mb-2">Horários Flexíveis</h5>
-                        <p class="text-muted mb-0">Agendamento adaptado à sua rotina</p>
+                        <p class="text-muted mb-0">Agendamentos conforme sua disponibilidade</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
@@ -210,17 +333,17 @@
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h5 class="text-white mb-2">Segurança Total</h5>
-                        <p class="text-muted mb-0">Veículo revisado e ambiente controlado</p>
+                        <h5 class="text-white mb-2">Segurança Garantida</h5>
+                        <p class="text-muted mb-0">Veículo preparado e instrução responsável</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
                     <div class="feature-box">
                         <div class="feature-icon">
-                            <i class="fas fa-tag"></i>
+                            <i class="fas fa-trophy"></i>
                         </div>
-                        <h5 class="text-white mb-2">1ª Aula Especial</h5>
-                        <p class="text-muted mb-0">Conheça o trabalho com desconto</p>
+                        <h5 class="text-white mb-2">Foco na Aprovação</h5>
+                        <p class="text-muted mb-0">Preparação estratégica para o exame</p>
                     </div>
                 </div>
             </div>
@@ -232,45 +355,39 @@
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-title" data-aos="fade-up">Entre em Contato</h2>
-                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">Agende sua aula agora</p>
+                <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">WhatsApp é o melhor canal para
+                    agendamento rápido</p>
             </div>
             <div class="row">
                 <div class="col-lg-6 mb-4" data-aos="fade-right">
-                    <div class="glass-card">
-                        <h4 class="text-white mb-4">Envie uma Mensagem</h4>
-                        <form id="contactForm">
-                            <div class="mb-3">
-                                <label for="nome" class="form-label">Nome Completo</label>
-                                <input type="text" class="form-control" id="nome" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="whatsapp" class="form-label">WhatsApp</label>
-                                <input type="tel" class="form-control" id="whatsapp" placeholder="(33) 99999-9999" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="mensagem" class="form-label">Mensagem</label>
-                                <textarea class="form-control" id="mensagem" rows="4" required></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-neon w-100">
-                                <i class="fas fa-paper-plane me-2"></i>Enviar
-                            </button>
-                        </form>
+                    <div class="glass-card p-5 text-center">
+                        <div class="whatsapp-section mb-5">
+                            <i class="fab fa-whatsapp fa-4x mb-4" style="color: #25d366;"></i>
+                            <h3 class="text-white mb-3">Fale Direto no WhatsApp</h3>
+                            <p class="lead mb-4">Resposta imediata para agendar sua aula</p>
+                            <a href="https://wa.me/557791453822?text=Olá%20Luis!%20Gostaria%20de%20agendar%20minha%20primeira%20aula."
+                                class="btn btn-neon btn-lg w-100 mb-3">
+                                <i class="fab fa-whatsapp me-2"></i>Iniciar Conversa
+                            </a>
+                        </div>
+
+                        <div class="youtube-section">
+                            <h5 class="text-white mb-4">📺 Conteúdo Gratuito no YouTube</h5>
+                            <p class="text-muted mb-4">Dicas de direção, simulados e muito mais!</p>
+                            <a href="https://youtube.com/@LuisInstrutorGV" class="youtube-btn w-100 mb-3"
+                                target="_blank" rel="noopener">
+                                <i class="fab fa-youtube"></i> Acompanhar Canal
+                            </a>
+                            <p class="text-muted small mb-0">Inscreva-se para receber dicas gratuitas</p>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-6 mb-4" data-aos="fade-left">
                     <div class="glass-card p-0" style="height: 100%; min-height: 500px; overflow: hidden;">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60579.89447138907!2d-41.98571586875!3d-18.85131465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xaff387d1e1c16f%3A0x7d24b0d0b3f6e8d5!2sGovernador%20Valadares%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0; border-radius: 20px; filter: brightness(0.8) saturate(1.2);" 
-                            allowfullscreen="" 
-                            loading="lazy">
-                        </iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1122.684785774789!2d-41.90571557729777!3d-18.83170676546017!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xb10a1df8f06c97%3A0xc654f98661045bc3!2sR.%20B%2C%2072%20-%20Sir%2C%20Gov.%20Valadares%20-%20MG%2C%2035024-160!5e0!3m2!1spt-BR!2sbr!4v1766706106283!5m2!1spt-BR!2sbr"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -280,21 +397,34 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p class="mb-0" style="color: var(--text-muted);">
-                <i class="fas fa-copyright me-1"></i> 2025 <span style="color: var(--accent-cyan);">Luis Instrutor</span> | Governador Valadares-MG
-            </p>
-            <p class="mb-0 mt-2 small" style="color: var(--text-muted);">
-                Desenvolvido com <i class="fas fa-heart" style="color: var(--accent-cyan);"></i>
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0" style="color: var(--text-muted);">
+                        <i class="fas fa-copyright me-1"></i> 2025 <span style="color: var(--accent-cyan);">Luis
+                            Instrutor</span> | Governador Valadares-MG
+                    </p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="https://wa.me/557791453822" class="me-3" style="color: #25d366; text-decoration: none;">
+                        <i class="fab fa-whatsapp me-1"></i> WhatsApp
+                    </a>
+                    <a href="https://youtube.com/@LuisInstrutorGV" target="_blank" rel="noopener"
+                        style="color: #FF0000; text-decoration: none;">
+                        <i class="fab fa-youtube me-1"></i> YouTube
+                    </a>
+                </div>
+            </div>
+            <p class="mb-0 mt-3 small" style="color: var(--text-muted);">
+                Aulas práticas seguras e personalizadas para habilitação
             </p>
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/557791453822?text=Olá,%20Luis!%20Gostaria%20de%20agendar%20uma%20aula." 
-       class="whatsapp-float" 
-       target="_blank"
-       title="Fale no WhatsApp">
+    <!-- WhatsApp Float - CORRIGIDO -->
+    <a href="https://wa.me/557791453822?text=Olá%20Luis!%20Gostaria%20de%20agendar%20uma%20aula." class="whatsapp-float"
+        target="_blank" title="Fale no WhatsApp - Agende sua aula experimental" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-label">Agende sua aula</span>
     </a>
 
     <!-- Scripts -->
@@ -304,5 +434,14 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
 
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
 </body>
+
 </html>
