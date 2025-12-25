@@ -1,0 +1,582 @@
+ /* ==========================================
+           DARK THEME - VARIÁVEIS E RESET
+           ========================================== */
+ :root {
+     --bg-primary: #0F1419;
+     --bg-secondary: #1A1F2B;
+     --bg-card: #1E2430;
+     --accent-cyan: #00D4FF;
+     --accent-blue: #4A90E2;
+     --text-primary: #FFFFFF;
+     --text-secondary: #E8ECEF;
+     --text-muted: #8B92A0;
+     --neon-glow: 0 0 20px rgba(0, 212, 255, 0.5);
+     --neon-glow-strong: 0 0 30px rgba(0, 212, 255, 0.8);
+ }
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Inter', sans-serif;
+     background: var(--bg-primary);
+     color: var(--text-secondary);
+     overflow-x: hidden;
+ }
+
+ html {
+     scroll-behavior: smooth;
+ }
+
+ /* ==========================================p
+           HEADER DARK COM GLASSMORPHISM
+           ========================================== */
+ #header {
+     position: fixed;
+     top: 0;
+     width: 100%;
+     z-index: 1000;
+     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+ }
+
+ #header.scrolled {
+     background: rgba(15, 20, 25, 0.85);
+     backdrop-filter: blur(20px);
+     -webkit-backdrop-filter: blur(20px);
+     border-bottom: 1px solid rgba(0, 212, 255, 0.15);
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+ }
+
+ .navbar {
+     padding: 1.2rem 0;
+     background: transparent;
+ }
+
+ .navbar-brand {
+     font-family: 'Orbitron', sans-serif;
+     font-size: 1.5rem;
+     font-weight: 900;
+     color: var(--text-primary) !important;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     text-shadow: var(--neon-glow);
+ }
+
+ .navbar-brand i {
+     color: var(--accent-cyan);
+     font-size: 1.8rem;
+     filter: drop-shadow(var(--neon-glow));
+ }
+
+ .navbar-brand small {
+     font-family: 'Inter', sans-serif;
+     font-size: 0.65rem;
+     font-weight: 400;
+     letter-spacing: 1px;
+     color: var(--accent-cyan);
+ }
+
+ .nav-link {
+     font-weight: 600;
+     color: var(--text-muted) !important;
+     margin: 0 1rem;
+     padding: 0.5rem 0;
+     position: relative;
+     transition: all 0.3s ease;
+     text-transform: uppercase;
+     font-size: 0.85rem;
+     letter-spacing: 1px;
+ }
+
+ .nav-link::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 50%;
+     transform: translateX(-50%);
+     width: 0;
+     height: 2px;
+     background: var(--accent-cyan);
+     transition: width 0.3s ease;
+     box-shadow: var(--neon-glow);
+ }
+
+ .nav-link:hover,
+ .nav-link.active {
+     color: var(--accent-cyan) !important;
+ }
+
+ .nav-link:hover::after,
+ .nav-link.active::after {
+     width: 80%;
+ }
+
+ /* ==========================================
+           HERO SECTION - PARTICLES + PARALLAX
+           ========================================== */
+ #particles-js {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     top: 0;
+     left: 0;
+     z-index: 1;
+ }
+
+ .hero-section {
+     min-height: 100vh;
+     display: flex;
+     align-items: center;
+     position: relative;
+     background: linear-gradient(135deg, #0F1419 0%, #1A1F2B 100%);
+     overflow: hidden;
+     padding-top: 80px;
+ }
+
+ .hero-bg {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=2071') center/cover;
+     filter: brightness(0.3) saturate(1.2);
+     z-index: 0;
+ }
+
+ .hero-overlay {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: radial-gradient(circle at 30% 50%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+         linear-gradient(135deg, rgba(15, 20, 25, 0.9) 0%, rgba(26, 31, 43, 0.85) 100%);
+     z-index: 1;
+ }
+
+ .hero-content {
+     position: relative;
+     z-index: 3;
+ }
+
+ .hero-title {
+     font-family: 'Orbitron', sans-serif;
+     font-size: 4rem;
+     font-weight: 900;
+     color: var(--text-primary);
+     text-transform: uppercase;
+     line-height: 1.1;
+     margin-bottom: 1.5rem;
+     text-shadow: 0 0 30px rgba(0, 212, 255, 0.6);
+ }
+
+ .hero-title .typed-text {
+     color: var(--accent-cyan);
+     text-shadow: var(--neon-glow-strong);
+ }
+
+ .typing-cursor {
+     display: inline-block;
+     width: 3px;
+     background: var(--accent-cyan);
+     margin-left: 5px;
+     animation: blink 0.7s infinite;
+     box-shadow: var(--neon-glow);
+ }
+
+ @keyframes blink {
+
+     0%,
+     49% {
+         opacity: 1;
+     }
+
+     50%,
+     100% {
+         opacity: 0;
+     }
+ }
+
+ .hero-subtitle {
+     font-size: 1.4rem;
+     font-weight: 300;
+     color: var(--text-secondary);
+     margin-bottom: 2.5rem;
+     max-width: 700px;
+ }
+
+ .btn-neon {
+     background: transparent;
+     border: 2px solid var(--accent-cyan);
+     color: var(--accent-cyan);
+     padding: 1rem 3rem;
+     font-size: 1.1rem;
+     font-weight: 700;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     position: relative;
+     overflow: hidden;
+     transition: all 0.4s ease;
+     box-shadow: var(--neon-glow);
+ }
+
+ .btn-neon::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: -100%;
+     width: 100%;
+     height: 100%;
+     background: var(--accent-cyan);
+     transition: left 0.4s ease;
+     z-index: -1;
+ }
+
+ .btn-neon:hover {
+     color: var(--bg-primary);
+     border-color: var(--accent-cyan);
+     box-shadow: var(--neon-glow-strong);
+     transform: translateY(-3px);
+ }
+
+ .btn-neon:hover::before {
+     left: 0;
+ }
+
+ /* ==========================================
+           GLASSMORPHISM CARDS
+           ========================================== */
+ .glass-card {
+     background: rgba(30, 36, 48, 0.6);
+     backdrop-filter: blur(20px);
+     -webkit-backdrop-filter: blur(20px);
+     border: 1px solid rgba(0, 212, 255, 0.2);
+     border-radius: 20px;
+     padding: 2rem;
+     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+ }
+
+ .glass-card:hover {
+     transform: translateY(-10px);
+     border-color: rgba(0, 212, 255, 0.5);
+     box-shadow: 0 15px 45px rgba(0, 212, 255, 0.2);
+ }
+
+ /* ==========================================
+           SOBRE MIM - DARK PREMIUM
+           ========================================== */
+ #sobre {
+     background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+     padding: 6rem 0;
+     position: relative;
+ }
+
+ #sobre::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+     opacity: 0.3;
+ }
+
+ .profile-image {
+     width: 250px;
+     height: 250px;
+     border-radius: 50%;
+     background: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300') center/cover;
+     border: 4px solid var(--accent-cyan);
+     box-shadow: 0 0 40px rgba(0, 212, 255, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.5);
+     position: relative;
+     overflow: hidden;
+ }
+
+ .profile-image::after {
+     content: '';
+     position: absolute;
+     top: -50%;
+     left: -50%;
+     width: 200%;
+     height: 200%;
+     background: linear-gradient(45deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+     animation: shine 3s infinite;
+ }
+
+ @keyframes shine {
+     0% {
+         transform: rotate(0deg);
+     }
+
+     100% {
+         transform: rotate(360deg);
+     }
+ }
+
+ .section-title {
+     font-family: 'Orbitron', sans-serif;
+     font-size: 3rem;
+     font-weight: 900;
+     color: var(--text-primary);
+     text-transform: uppercase;
+     margin-bottom: 1rem;
+     text-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+ }
+
+ .section-subtitle {
+     color: var(--accent-cyan);
+     font-size: 1.1rem;
+     margin-bottom: 3rem;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+ }
+
+ /* ==========================================
+           SERVIÇOS - NEON CARDS
+           ========================================== */
+ #servicos {
+     background: var(--bg-primary);
+     padding: 6rem 0;
+     position: relative;
+     overflow: hidden;
+ }
+
+ .service-card {
+     background: rgba(30, 36, 48, 0.5);
+     backdrop-filter: blur(15px);
+     border: 1px solid rgba(0, 212, 255, 0.15);
+     border-radius: 20px;
+     padding: 2.5rem;
+     transition: all 0.4s ease;
+     position: relative;
+     overflow: hidden;
+
+ }
+
+ .feature-box p {
+     color: white !important;
+ }
+
+ .service-card p {
+     color: white !important;
+ }
+
+ .service-card::before {
+     content: '';
+     position: absolute;
+     top: -50%;
+     left: -50%;
+     width: 200%;
+     height: 200%;
+     background: radial-gradient(circle, rgba(0, 212, 255, 0.1) 0%, transparent 70%);
+     opacity: 0;
+     transition: opacity 0.4s ease;
+ }
+
+ .service-card:hover::before {
+     opacity: 1;
+ }
+
+ .service-card:hover {
+     transform: translateY(-15px) scale(1.02);
+     border-color: var(--accent-cyan);
+     box-shadow: 0 20px 50px rgba(0, 212, 255, 0.3);
+ }
+
+ .service-icon {
+     width: 100px;
+     height: 100px;
+     background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 100%);
+     border-radius: 20px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto 1.5rem;
+     position: relative;
+     box-shadow: var(--neon-glow);
+ }
+
+ .service-icon i {
+     font-size: 2.5rem;
+     color: var(--bg-primary);
+     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+ }
+
+ .service-card h5 {
+     font-family: 'Orbitron', sans-serif;
+     font-size: 1.3rem;
+     color: var(--text-primary);
+     margin-bottom: 1rem;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+ }
+
+ .service-card .price {
+     font-size: 2rem;
+     font-weight: 800;
+     color: var(--accent-cyan);
+     text-shadow: var(--neon-glow);
+ }
+
+ /* ==========================================
+           FEATURES - GRID DARK
+           ========================================== */
+ .feature-box {
+     background: rgba(30, 36, 48, 0.4);
+     border: 1px solid rgba(139, 146, 160, 0.1);
+     border-radius: 15px;
+     padding: 2rem;
+     transition: all 0.3s ease;
+ }
+
+ .feature-box:hover {
+     background: rgba(0, 212, 255, 0.05);
+     border-color: rgba(0, 212, 255, 0.3);
+     transform: scale(1.05);
+ }
+
+ .feature-icon {
+     width: 80px;
+     height: 80px;
+     background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(74, 144, 226, 0.2));
+     border: 2px solid rgba(0, 212, 255, 0.3);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0 auto 1rem;
+     transition: all 0.3s ease;
+ }
+
+ .feature-box:hover .feature-icon {
+     background: var(--accent-cyan);
+     border-color: var(--accent-cyan);
+     box-shadow: var(--neon-glow-strong);
+ }
+
+ .feature-icon i {
+     font-size: 2rem;
+     color: var(--accent-cyan);
+     transition: all 0.3s ease;
+ }
+
+ .feature-box:hover .feature-icon i {
+     color: var(--bg-primary);
+ }
+
+ /* ==========================================
+           CONTATO - DARK FORM
+           ========================================== */
+ #contato {
+     background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+     padding: 6rem 0;
+ }
+
+ .form-control {
+     background: rgba(30, 36, 48, 0.6);
+     border: 1px solid rgba(0, 212, 255, 0.2);
+     border-radius: 10px;
+     padding: 1rem;
+     color: var(--text-primary);
+     transition: all 0.3s ease;
+ }
+
+ .form-control:focus {
+     background: rgba(30, 36, 48, 0.8);
+     border-color: var(--accent-cyan);
+     box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
+     color: var(--text-primary);
+ }
+
+ .form-control::placeholder {
+     color: var(--text-muted);
+ }
+
+ .form-label {
+     color: var(--accent-cyan);
+     font-weight: 600;
+     text-transform: uppercase;
+     font-size: 0.85rem;
+     letter-spacing: 1px;
+ }
+
+ /* ==========================================
+           WHATSAPP BUTTON - NEON STYLE
+           ========================================== */
+ .whatsapp-float {
+     position: fixed;
+     width: 70px;
+     height: 70px;
+     bottom: 30px;
+     right: 30px;
+     background: linear-gradient(135deg, #25D366, #128C7E);
+     color: white;
+     border-radius: 50%;
+     text-align: center;
+     font-size: 35px;
+     box-shadow: 0 0 30px rgba(37, 211, 102, 0.6);
+     z-index: 999;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     transition: all 0.3s ease;
+     animation: pulse-whatsapp 2s infinite;
+     border: 3px solid rgba(37, 211, 102, 0.3);
+ }
+
+ .whatsapp-float:hover {
+     transform: scale(1.15);
+     box-shadow: 0 0 50px rgba(37, 211, 102, 0.9);
+     color: white;
+ }
+
+ @keyframes pulse-whatsapp {
+     0% {
+         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+     }
+
+     70% {
+         box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);
+     }
+
+     100% {
+         box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+     }
+ }
+
+ /* ==========================================
+           FOOTER DARK
+           ========================================== */
+ footer {
+     background: var(--bg-primary);
+     border-top: 1px solid rgba(0, 212, 255, 0.2);
+     padding: 2rem 0;
+ }
+
+ /* ==========================================
+           RESPONSIVIDADE
+           ========================================== */
+ @media (max-width: 768px) {
+     .hero-title {
+         font-size: 2.5rem;
+     }
+
+     .section-title {
+         font-size: 2rem;
+     }
+
+     .navbar-brand {
+         font-size: 1.2rem;
+     }
+
+     .profile-image {
+         width: 180px;
+         height: 180px;
+     }
+ }
