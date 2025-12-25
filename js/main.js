@@ -140,7 +140,7 @@ document.getElementById('ctaBtn').addEventListener('click', () => {
         color: '#E8ECEF'
     }).then((result) => {
         if (result.isConfirmed) {
-            const numero = '5533999999999';
+            const numero = '557791453822';
             const msg = encodeURIComponent('Olá, Luis! Gostaria de agendar uma aula de direção.');
             window.open(`https://wa.me/${numero}?text=${msg}`, '_blank');
         }
@@ -196,7 +196,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     });
 
     setTimeout(() => {
-        const numero = '5533999999999';
+        const numero = '55557791453822';
         const msg = `Olá Luis! Meu nome é ${nome}.%0A%0AWhatsApp: ${whatsapp}%0AE-mail: ${email}%0A%0AMensagem: ${mensagem}`;
 
         Swal.fire({
